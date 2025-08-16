@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Your Cart - 1&ONLY Posters</title>
+  <link rel="stylesheet" href="style-cart.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body class="cart-page">
+  <header>
+    <div class="logo">1&ONLY</div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="#">Categories</a>
+      <a href="#">Custom</a>
+      <a href="cart.html" class="cart-link" aria-current="page">
+        🛒 Cart <span class="cart-count" aria-live="polite">0</span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- Offer Explanation Popup -->
+  <div id="offerModal" class="offer-modal" role="dialog" aria-modal="true" aria-labelledby="offerTitle" aria-describedby="offerDesc" tabindex="-1">
+    <div class="offer-modal-content">
+      <button class="close-btn" aria-label="Close Offer Modal" onclick="closeOfferModal()">&times;</button>
+      <h2 id="offerTitle">🎉 Special Offer: Buy 10, Get 4 FREE!</h2>
+      <div id="offerDesc" class="offer-description">
+        <p>Order <strong>10 posters of the same size (A3 or A4)</strong> and get <strong>4 extra posters absolutely FREE</strong>!</p>
+        <div class="offer-highlight">
+          <p>💡 <strong>Example:</strong> Buy 10 A4 posters for ₹400 and get 4 A4 posters FREE!</p>
+          <p>💰 <strong>You save:</strong> ₹160 on this example!</p>
+        </div>
+        <p>This offer applies automatically when you add 10 or more posters of the same size to your cart.</p>
+        <button class="offer-cta-button" onclick="closeOfferModal()">Got It!</button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section id="cart-items" aria-label="Cart Items"></section>
+
+    <section class="offer-layout" aria-label="Special Offers">
+      <h2>🎉 Special Offers</h2>
+      <div class="poster-summary">
+        <span>Total Posters: <span id="poster-count">0</span></span>
+        <span><span id="offer-message">No offer selected.</span></span>
+      </div>
+      <div class="progress-track" aria-hidden="true">
+        <div class="progress-fill" id="offer-progress"></div>
+      </div>
+      <label for="offer-select" class="sr-only">Select a special offer</label>
+      <select id="offer-select" class="styled-select" aria-describedby="offer-message">
+        <option value="">-- Select an offer --</option>
+      </select>
+      <div id="free-poster-message" style="color: #00c853; font-size: 14px;"></div>
+
+      <div class="billing-box" aria-label="Billing Summary">
+        <table class="billing-table">
+          <thead>
+            <tr>
+              <th>Poster</th>
+              <th>Image</th>
+              <th>Size</th>
+              <th>Qty</th>
+              <th>Unit Price</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="billing-items"></tbody>
+        </table>
+        <div class="bill-row">
+          <span>Subtotal</span>
+          <span id="subtotal-value">₹0</span>
+        </div>
+        <div class="bill-row" id="discount-line" style="display: none;">
+          <span>Discount</span>
+          <span id="discount-value" style="color: #ff5252;">– ₹0</span>
+        </div>
+        <hr style="border-color: #333; margin: 10px 0;" />
+        <div class="bill-row grand-total">
+          <span>Grand Total</span>
+          <span id="grand-total-value">₹0</span>
+        </div>
+      </div>
+    </section>
+
+    <button class="checkout-btn" onclick="checkoutCart()" aria-label="Checkout on WhatsApp">Checkout on WhatsApp</button>
+  </main>
+
+  <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
+
+  <script src="script-cart.js"></script>
+</body>
+</html>

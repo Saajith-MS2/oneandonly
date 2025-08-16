@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>1&ONLY Posters</title>
+  <link rel="stylesheet" href="style-home.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">1&ONLY</div>
+    <nav>
+      <a href="home.html" aria-current="page">Home</a>
+      <div class="dropdown" role="navigation">
+        <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-menu">Categories</button>
+        <div class="dropdown-content" id="dropdown-menu" role="menu">
+          <a href="#" role="menuitem">Anime</a>
+          <a href="#" role="menuitem">Automobile</a>
+          <a href="#" role="menuitem">Fandom</a>
+          <a href="#" role="menuitem">Motivation</a>
+          <a href="#" role="menuitem">Tamil Movies</a>
+          <a href="#" role="menuitem">Music & Artists</a>
+          <a href="#" role="menuitem">Cricket</a>
+          <a href="#" role="menuitem">Football</a>
+        </div>
+      </div>
+      <a href="custom.html">Custom</a>
+      <a href="cart.html" class="cart-link" aria-label="View Cart">
+        🛒 Cart <span class="cart-count" aria-live="polite">0</span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- Search bar temporarily disabled -->
+  <!--
+  <input type="text" id="posterSearch" placeholder="Search posters..." class="search-bar" aria-label="Search posters" />
+  -->
+
+  <div class="marquee-banner" aria-label="Special Offers">
+    <marquee behavior="scroll" direction="left" scrollamount="6" aria-hidden="true">
+      🛒 Buy 10 A3 posters at ₹500 & get 4 FREE | Or get 10 for just ₹400! — Free delivery in PSGCAS — Pay on delivery available — Order now on WhatsApp 📱
+    </marquee>
+  </div>
+
+  <!-- Special Offer Popup Modal -->
+  <div id="offerModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="offerTitle" aria-describedby="offerDesc" tabindex="-1">
+  <div class="modal-content enhanced-modal">
+    <button class="close-btn" aria-label="Close Offer Modal" onclick="closeModal()">&times;</button>
+    <header class="modal-header">
+      <h2 id="offerTitle">🎉 Special Introductory Offer!</h2>
+    </header>
+    <section class="modal-body" id="offerDesc">
+      <p><strong>Buy 10 Posters, Get 4 FREE!</strong></p>
+      <p>
+        Order 10 posters of the same size, and automatically get <strong>4 extra posters FREE</strong> – no extra cost!
+      </p>
+      <div class="price-info">
+        <div>
+          <span class="price-new">A4: ₹40</span>
+          <span class="price-old">₹60</span>
+        </div>
+        <div>
+          <span class="price-new">A3: ₹50</span>
+          <span class="price-old">₹80</span>
+        </div>
+      </div>
+      <p class="cta-text">
+        Grab this offer now and decorate your space with amazing posters at unbeatable prices!
+      </p>
+    </section>
+    <footer class="modal-footer">
+      <button class="cta-button" onclick="closeModal()">Shop Now</button>
+    </footer>
+  </div>
+</div>
+
+  <section class="special-offer" aria-label="Current Special Offer">
+    <h2>Special Offer: Buy 10 Posters, Get 4 FREE!</h2>
+    <p>Order 10 posters of the same size (A3 or A4), and you'll automatically get 4 extra posters FREE – no extra cost!</p>
+  </section>
+
+  <main>
+  <section class="product-grid" aria-label="Poster Collection" id="productsGrid">
+
+    <article class="product" role="region" aria-labelledby="porsche-title" data-name="Porsche Special Edition" data-code="CO1">
+      <img src="cars/1.jpg" alt="Porsche Special Edition Poster" loading="lazy" />
+      <span class="sale-tag" aria-label="Sale">Sale</span>
+      <p id="porsche-title">Porsche Special Edition</p>
+      <p class="item-code">Item Code: <strong>CO1</strong></p>
+      
+      <label for="size-select-CO1" class="sr-only">Select size for Porsche poster</label>
+      <select id="size-select-CO1" class="size-select" aria-label="Select Size">
+        <option value="A4">A4</option>
+        <option value="A3">A3</option>
+      </select>
+      
+      <div class="price-display">
+        <span>A4 Price: <strong>₹40</strong> <s>₹60</s></span>
+        <span>A3 Price: <strong>₹50</strong> <s>₹80</s></span>
+      </div>
+      
+      <label for="qty-select-CO1" class="sr-only">Select quantity for Porsche poster</label>
+      <select id="qty-select-CO1" class="qty-select" aria-label="Select Quantity">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+      
+      <button class="add-to-cart-btn" onclick="addToCart('CO1')" aria-label="Add Porsche Special Edition to cart">Add to Cart</button>
+    </article>
+
+    <article class="product" role="region" aria-labelledby="mercedes-title" data-name="Mercedes Benz Special Edition" data-code="CO2">
+      <img src="cars/11.jpg" alt="Mercedes Benz Special Edition Poster" loading="lazy" />
+      <span class="sale-tag" aria-label="Sale">Sale</span>
+      <p id="mercedes-title">Mercedes Benz Special Edition</p>
+      <p class="item-code">Item Code: <strong>CO2</strong></p>
+      
+      <label for="size-select-CO2" class="sr-only">Select size for Mercedes Benz poster</label>
+      <select id="size-select-CO2" class="size-select" aria-label="Select Size">
+        <option value="A4">A4</option>
+        <option value="A3">A3</option>
+      </select>
+      
+      <div class="price-display">
+        <span>A4 Price: <strong>₹40</strong> <s>₹60</s></span>
+        <span>A3 Price: <strong>₹50</strong> <s>₹80</s></span>
+      </div>
+      
+      <label for="qty-select-CO2" class="sr-only">Select quantity for Mercedes Benz poster</label>
+      <select id="qty-select-CO2" class="qty-select" aria-label="Select Quantity">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+      
+      <button class="add-to-cart-btn" onclick="addToCart('CO2')" aria-label="Add Mercedes Benz Special Edition to cart">Add to Cart</button>
+    </article>
+
+  </section>
+</main>
+
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-content">
+      <section class="footer-section about" aria-labelledby="about-us-heading">
+        <h3 id="about-us-heading">About Us</h3>
+        <p>
+          Welcome to <strong>1 & ONLY Posters</strong>, your go-to destination for high-quality, creative, and affordable posters.
+        </p>
+        <p>
+          We believe that every wall has a story to tell, and our mission is to help you tell yours through unique designs, vibrant prints, and top-notch materials.
+        </p>
+      </section>
+
+      <section class="footer-section contact" aria-labelledby="contact-us-heading">
+        <h3 id="contact-us-heading">Contact Us</h3>
+        <p>📍 [Your Address]</p>
+        <p>📞 +91-XXXXXXXXXX</p>
+        <p>📧 contact@1andonlyposters.com</p>
+        <p>📱 WhatsApp: +91-XXXXXXXXXX</p>
+        <div class="social-icons" role="navigation" aria-label="Social media links">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </section>
+
+      <section class="footer-section policies" aria-labelledby="policies-heading">
+        <h3 id="policies-heading">Policies</h3>
+        <ul class="collapsible-list">
+          <li>
+            <button class="collapsible-header" onclick="toggleCollapsible('terms')" aria-expanded="false" aria-controls="terms">
+              Terms & Conditions <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div id="terms" class="collapsible-content" hidden>
+              <p>By accessing and using the <strong>1 & ONLY Posters</strong> website, you agree to the following terms and conditions:</p>
+              <ul>
+                <li>Product Information: All images on the website are for representation purposes. Actual product colors may vary slightly due to different screen settings.</li>
+                <li>Pricing: Prices are listed in INR and are subject to change without prior notice.</li>
+                <li>Orders: Orders are processed once payment or 'Pay on Delivery' confirmation is received.</li>
+                <li>Offers: The Buy 10 Posters, Get 4 Free offer applies only to same-size orders (A3 or A4).</li>
+                <li>Copyright: All designs are the intellectual property of <strong>1 & ONLY Posters</strong> and cannot be reproduced without permission.</li>
+                <li>Liability: We are not responsible for damage caused by mishandling after delivery.</li>
+              </ul>
+            </div>
+          </li>
+          <!-- Additional collapsible items similarly structured -->
+          <!-- Shipping Policy -->
+          <li>
+            <button class="collapsible-header" onclick="toggleCollapsible('shipping')" aria-expanded="false" aria-controls="shipping">
+              Shipping Policy <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div id="shipping" class="collapsible-content" hidden>
+              <h4>Shipping:</h4>
+              <ul>
+                <li>Delivery Time: Usually 3-7 business days after order confirmation.</li>
+                <li>Free Delivery within PSGCAS.</li>
+                <li>Carefully packed to ensure no damage during transit.</li>
+                <li>Tracking details will be provided once the order is dispatched.</li>
+                <li>While we assist with delivery tracking, we are not liable for third-party courier delays.</li>
+              </ul>
+            </div>
+          </li>
+          <!-- Cancellation Policy -->
+          <li>
+            <button class="collapsible-header" onclick="toggleCollapsible('cancellation')" aria-expanded="false" aria-controls="cancellation">
+              Cancellation Policy <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div id="cancellation" class="collapsible-content" hidden>
+              <h4>Cancellation:</h4>
+              <ul>
+                <li>Orders can be canceled within 6 hours of placement for a full refund.</li>
+                <li>Cancellations after this period may not be eligible for a refund if printing has already begun.</li>
+              </ul>
+            </div>
+          </li>
+          <!-- Fan Art Disclaimer -->
+          <li>
+            <button class="collapsible-header" onclick="toggleCollapsible('fan-art')" aria-expanded="false" aria-controls="fan-art">
+              Fan Art Disclaimer <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div id="fan-art" class="collapsible-content" hidden>
+              <p>Some artwork featured on our website is fan art created by independent artists.</p>
+              <p>Unless specifically stated otherwise, these posters are not official merchandise and are not affiliated with, endorsed, or sponsored by the original creators, brands, or copyright holders.</p>
+              <p>All trademarks, characters, and imagery are the property of their respective owners and are used under fair use for artistic expression.</p>
+              <p>If you are a copyright holder and believe your work has been used without proper credit or permission, please email us at <strong>rights@1andonlyposters.com</strong>, and we will take immediate action.</p>
+            </div>
+          </li>
+          <!-- FAQs -->
+          <li>
+            <button class="collapsible-header" onclick="toggleCollapsible('faqs')" aria-expanded="false" aria-controls="faqs">
+              FAQs <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div id="faqs" class="collapsible-content" hidden>
+              <ol>
+                <li>
+                  <strong>Do you offer custom posters?</strong>
+                  <p>Yes - share your design or idea, and we'll create a poster just for you.</p>
+                </li>
+                <li>
+                  <strong>How does the "Buy 10, Get 4 Free" offer work?</strong>
+                  <p>Buy 10 posters of the same size (A3 or A4), and 4 extra posters will be added to your package free.</p>
+                </li>
+                <li>
+                  <strong>Do your prices include delivery?</strong>
+                  <p>Yes, delivery is free within PSGCAS. Charges may apply for other locations.</p>
+                </li>
+                <li>
+                  <strong>What poster sizes are available?</strong>
+                  <p>We currently provide A3 and A4 sizes.</p>
+                </li>
+                <li>
+                  <strong>What payment options do you offer?</strong>
+                  <p>Pay on Delivery, UPI, and bank transfers.</p>
+                </li>
+                <li>
+                  <strong>What if my poster is damaged in delivery?</strong>
+                  <p>Contact us within 24 hours with photos, and we'll replace it.</p>
+                </li>
+              </ol>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 <strong>1 & ONLY Posters</strong>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script-home.js"></script>
+</body>
+</html>
